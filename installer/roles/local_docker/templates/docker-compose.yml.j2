@@ -166,7 +166,7 @@ services:
     command: ["/usr/local/etc/redis/redis.conf"]
     volumes:
       - "{{ docker_compose_dir }}/redis.conf:/usr/local/etc/redis/redis.conf:ro"
-      - "{{ docker_compose_dir }}/redis_socket:/var/run/redis/:rw"
+      - "{{ docker_compose_dir }}/redis_socket:/var/run/redis/:rwz"
     {% if docker_logger is defined %}
     logging:
       driver: {{ docker_logger }}
